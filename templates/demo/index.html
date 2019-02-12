@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Index Page</title>
+</head>
+<body>
+<em>This is the index page of the Demo app</br>
+{% if user.is_authenticated %}
+<p>your name is :{{user.username}}</p>
+{%else %}
+<p>you are not logged in</p>
+{%endif%}
+
+
+
+
+</em>
+</body>
+</html>
