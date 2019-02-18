@@ -5,12 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="{%url 'register'%}" method="post">
+<form action="/register/" method="post">
 
 {%csrf_token%}
 
 
-{{form}}
+{{form.username}}
+{{form.password1}}
+{{form.password2}}
 <input type="submit" value="register">
 </form>
 </body>

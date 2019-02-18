@@ -1,26 +1,28 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Login form</title>
-</head>
-<body>
-{% if form.errors %}
-<em>There is someting wrong with what you entered</em>
-{%endif%}
 
-{% if next %}
-<em>Hey you cant acces that page</em>
-{%endif %}
+{%load staticfiles%}
+<title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+<body >
+    <div class="loginbox">
 
-<form mathod="post" action="{% url 'login'%}">
-{%csrf_token%}
+        <h1>{{title}}</h1>
 
-<p>Username:{{form.username}}</p>
-<p>Password:{{form.password}}</p>
-<p><input type="submit" value="login"></p>
-<input type="text" name="next" value="{{next}}">
+        <form  method="post" action="{% url 'login' %}">
+          {%csrf_token%}
+            <p>Username</p>
+            {{form.username}}
+            <p>Password</p>
+            {{form.password}}
+            <input type="submit" name="submit" value="Login">
+            <a href="#" >Lost your password?</a><br>
+            <a href="{%url 'register'%}">Don't have an account?</a>
+        
+        </form>
 
-</form>
+    </div>
+
 </body>
+</head>
 </html>

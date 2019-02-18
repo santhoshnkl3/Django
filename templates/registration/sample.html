@@ -1,0 +1,29 @@
+<html>
+<head>
+
+{%load staticfiles%}
+<title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+<body >
+    <div class="loginbox">
+
+        <h1>SignUp Here</h1>
+
+        <form  method="post" action="{% url 'register' %}">
+          {%csrf_token%}
+            <p>Username</p>
+            {{form.username}}
+            <p>Password</p>
+            {{form.password1}}
+            <p>Confirm Password</p>
+            {{form.password2}}
+            <input type="submit" name="submit" value="Register">
+            <a  href="{% url 'login'%}" >Already Have an account?</a><br>
+            <a  href="#">Lost your password</a>
+        </form>
+
+    </div>
+
+</body>
+</head>
+</html>
